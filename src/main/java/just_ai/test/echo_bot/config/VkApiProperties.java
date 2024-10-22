@@ -15,7 +15,7 @@ import org.springframework.context.annotation.PropertySource;
 @Getter @Setter
 public class VkApiProperties {
     String token;
-    String version;
+    String v;
     String secret;
     String confirmation;
 }

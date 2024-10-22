@@ -5,6 +5,7 @@ import just_ai.test.echo_bot.services.callback.dto.CallbackDto;
 import just_ai.test.echo_bot.services.callback.dto.MessageNewCallbackDto;
 import just_ai.test.echo_bot.services.message.dto.SendMessageRequestDto;
 import just_ai.test.echo_bot.services.message.service.MessageServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.security.InvalidParameterException;
 import java.util.Map;
 
 @Service
+@Slf4j
 public class CallbackServiceImpl implements CallbackService {
     @Autowired
     private VkApiProperties vkApiProperties;
@@ -23,15 +25,19 @@ public class CallbackServiceImpl implements CallbackService {
     public String handleCallback(CallbackDto callbackDto) {
         checkSecretParameter(callbackDto);
         switch (callbackDto.getType()) {
-            case confirmation -> {
+            case "confirmation" -> {
+                log.info(vkApiProperties.getConfirmation());
                 return vkApiProperties.getConfirmation();
             }
-            case message_new -> {
+            case "message_new" -> {
                 MessageNewCallbackDto messageNewCallbackDto = parseMessageNewDto(callbackDto);
                 handleMessageNew(messageNewCallbackDto);
                 return "ok";
             }
-            default -> throw new UnsupportedOperationException("unsupported callback type");
+            default -> {
+                log.info("unknown callback type: {}", callbackDto.getType());
+                throw new UnsupportedOperationException("unsupported callback type");
+            }
         }
     }
 

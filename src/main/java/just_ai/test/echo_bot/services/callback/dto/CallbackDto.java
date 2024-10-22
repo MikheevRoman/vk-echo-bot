@@ -17,7 +17,7 @@ import java.util.Map;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CallbackDto {
-    CallbackType type;
+    String type;
 
     Map<String, Object> object;
 
@@ -28,4 +28,6 @@ public class CallbackDto {
 
     @JsonProperty(value = "event_id")
     String eventId;
+
+    String v;
 }
