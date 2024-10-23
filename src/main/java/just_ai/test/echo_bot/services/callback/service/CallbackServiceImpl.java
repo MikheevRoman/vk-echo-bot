@@ -24,16 +24,16 @@ public class CallbackServiceImpl implements CallbackService {
     public String handleCallback(CallbackDto callbackDto) {
         switch (callbackDto.getType()) {
             case confirmation -> {
-                log.info(vkApiProperties.getConfirmation());
                 return vkApiProperties.getConfirmation();
             }
             case message_new -> {
                 MessageNewCallbackDto messageNewCallbackDto = parseMessageNewDto(callbackDto);
+                log.info("new message from [{}], text = {}", messageNewCallbackDto.getFromId(), messageNewCallbackDto.getText());
                 handleMessageNew(messageNewCallbackDto);
                 return "ok";
             }
             default -> {
-                log.info("unknown callback type: {}", callbackDto.getType());
+                log.warn("unknown callback type: {}", callbackDto.getType());
                 throw new UnsupportedOperationException("unsupported callback type");
             }
         }

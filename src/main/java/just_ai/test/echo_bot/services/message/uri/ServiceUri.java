@@ -7,6 +7,7 @@ import just_ai.test.echo_bot.exception.SendMessageException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
@@ -22,7 +23,7 @@ public class ServiceUri {
 
     public URI sendMessageUri(SendMessageRequestDto dto) {
         try {
-            LinkedMultiValueMap<String, String> map = paramsMapper.convertValue(dto, LinkedMultiValueMap.class);
+            MultiValueMap<String, String> map = paramsMapper.convertValue(dto, LinkedMultiValueMap.class);
             return UriComponentsBuilder
                     .fromHttpUrl(VK_API_URL + "/messages.send")
                     .queryParam("access_token", vkApiProperties.getToken())
