@@ -23,7 +23,8 @@ public class ServiceUri {
     public URI sendMessageUri(SendMessageRequestDto dto) {
         try {
             LinkedMultiValueMap<String, String> map = paramsMapper.convertValue(dto, LinkedMultiValueMap.class);
-            return UriComponentsBuilder.fromHttpUrl(VK_API_URL + "/messages.send")
+            return UriComponentsBuilder
+                    .fromHttpUrl(VK_API_URL + "/messages.send")
                     .queryParam("access_token", vkApiProperties.getToken())
                     .queryParam("v", vkApiProperties.getV())
                     .queryParams(map)

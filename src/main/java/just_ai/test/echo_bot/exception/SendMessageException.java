@@ -8,8 +8,4 @@ public class SendMessageException extends RuntimeException {
     public SendMessageException(Throwable cause) {
         super(cause);
     }
-
-    public SendMessageException(String message, Throwable cause) {
-        super(message, cause);
-    }
 }

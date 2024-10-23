@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.security.InvalidParameterException;
 import java.util.Map;
 
 @Service
@@ -23,13 +22,12 @@ public class CallbackServiceImpl implements CallbackService {
 
     @Override
     public String handleCallback(CallbackDto callbackDto) {
-        checkSecretParameter(callbackDto);
         switch (callbackDto.getType()) {
-            case "confirmation" -> {
+            case confirmation -> {
                 log.info(vkApiProperties.getConfirmation());
                 return vkApiProperties.getConfirmation();
             }
-            case "message_new" -> {
+            case message_new -> {
                 MessageNewCallbackDto messageNewCallbackDto = parseMessageNewDto(callbackDto);
                 handleMessageNew(messageNewCallbackDto);
                 return "ok";
@@ -51,20 +49,14 @@ public class CallbackServiceImpl implements CallbackService {
         messageService.sendMessage(sendMessageRequestDto);
     }
 
-    private static MessageNewCallbackDto parseMessageNewDto(CallbackDto callbackDto) {
-        Map<String, Object> map = callbackDto.getObject();
+    private MessageNewCallbackDto parseMessageNewDto(CallbackDto callbackDto) {
+        Map<String, Object> message = (Map<String, Object>) callbackDto.getObject().get("message");
         return MessageNewCallbackDto.builder()
-                .id(Long.parseLong(String.valueOf(map.get("id"))))
-                .peerId(Long.parseLong(String.valueOf(map.get("peer_id"))))
-                .fromId(Long.parseLong(String.valueOf(map.get("from_id"))))
-                .text(String.valueOf(map.get("text")))
+                .id(Long.parseLong(String.valueOf(message.get("id"))))
+                .peerId(Long.parseLong(String.valueOf(message.get("peer_id"))))
+                .fromId(Long.parseLong(String.valueOf(message.get("from_id"))))
+                .text(String.valueOf(message.get("text")))
                 .groupId(callbackDto.getGroupId())
                 .build();
-    }
-
-    private void checkSecretParameter(CallbackDto callbackDto) {
-        if (!vkApiProperties.getSecret().equals(callbackDto.getSecret())) {
-            throw new InvalidParameterException();
-        }
     }
 }

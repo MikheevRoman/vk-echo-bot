@@ -17,11 +17,9 @@ import java.util.Map;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CallbackDto {
-    String type;
+    CallbackType type;
 
     Map<String, Object> object;
-
-    String secret;
 
     @JsonProperty(value = "group_id")
     Long groupId;
