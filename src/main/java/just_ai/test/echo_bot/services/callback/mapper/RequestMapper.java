@@ -19,6 +19,7 @@ public interface RequestMapper {
      * Adds text "Вы сказали: " to message and maps callback to request DTO
      */
     @Mapping(source = "fromId",target = "userId")
+    @Mapping(target = "randomId", constant = "0L")
     @Mapping(source = "text", target = "message", qualifiedByName = "updateText")
     SendMessageRequestDto toSendMessageRequestDto(MessageCallbackDto messageCallbackDto);
 

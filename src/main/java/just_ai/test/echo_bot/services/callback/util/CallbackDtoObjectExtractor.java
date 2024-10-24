@@ -6,6 +6,9 @@ import just_ai.test.echo_bot.services.callback.dto.MessageCallbackDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * Gets the required objects from the {@code object} {@link just_ai.test.echo_bot.services.callback.dto.CallbackDto} field
+ */
 @Component
 public class CallbackDtoObjectExtractor {
     @Autowired
