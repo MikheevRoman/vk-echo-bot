@@ -11,6 +11,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * This implementation supports confirmation and message_new events
+ *
+ * @author Roman Mikheev
+ */
 @Service
 @Slf4j
 public class CallbackServiceImpl implements CallbackService {

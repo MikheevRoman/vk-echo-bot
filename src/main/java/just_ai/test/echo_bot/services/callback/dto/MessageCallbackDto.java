@@ -3,6 +3,7 @@ package just_ai.test.echo_bot.services.callback.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 /**
  * Incoming message DTO
@@ -13,15 +14,16 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MessageCallbackDto {
-    private Long id;
+    Long id;
 
     @JsonProperty(value = "peer_id")
-    private Long peerId;
+    Long peerId;
 
     @JsonProperty(value = "from_id")
-    private Long fromId;
+    Long fromId;
 
-    private String text;
+    String text;
 }

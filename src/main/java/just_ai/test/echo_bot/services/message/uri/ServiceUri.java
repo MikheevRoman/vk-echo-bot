@@ -12,6 +12,11 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 
+/**
+ * Provides a VK API connection URI
+ *
+ * @see <a href=https://dev.vk.com/ru/api/api-requests>VK API request documentation</a>
+ */
 @Component
 public class ServiceUri {
     @Autowired

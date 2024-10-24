@@ -12,6 +12,11 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URI;
 import java.util.Objects;
 
+/**
+ * This implementation supports VK API <b>messages.send</b> method
+ *
+ * @see <a href=https://dev.vk.com/ru/method/messages>supported message methods documentation</a>
+ */
 @Service
 public class MessageServiceImpl implements MessageService {
     @Autowired
@@ -21,7 +26,6 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public void sendMessage(SendMessageRequestDto sendMessageRequestDto) {
-        sendMessageRequestDto.setRandomId(0L);
         URI uri = serviceUri.sendMessageUri(sendMessageRequestDto);
         ResponseEntity<SendMessageResponseDto> responseEntity = restTemplate.postForEntity(
                 uri,
