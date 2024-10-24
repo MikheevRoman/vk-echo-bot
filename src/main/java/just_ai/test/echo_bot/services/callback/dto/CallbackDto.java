@@ -3,10 +3,7 @@ package just_ai.test.echo_bot.services.callback.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import just_ai.test.echo_bot.services.callback.enums.CallbackType;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Map;
@@ -18,6 +15,7 @@ import java.util.Map;
  * @author Mikheev Roman
  */
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
