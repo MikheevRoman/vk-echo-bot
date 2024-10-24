@@ -11,9 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Vk api requests controller
+ *
+ * @author Roman Mikheev
+ */
 @RestController
 @RequestMapping(value = "/bot/callback")
-@Slf4j
 public class CallbackController {
     @Autowired
     private CallbackServiceImpl callbackService;

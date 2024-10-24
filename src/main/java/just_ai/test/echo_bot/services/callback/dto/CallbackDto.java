@@ -11,6 +11,12 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.Map;
 
+/**
+ * VK API callback request DTO
+ *
+ * @see <a href=https://dev.vk.com/ru/api/callback/getting-started>VK API documentation</a>
+ * @author Mikheev Roman
+ */
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,6 +25,10 @@ import java.util.Map;
 public class CallbackDto {
     CallbackType type;
 
+    /**
+     * the object that initiated the event, such as a {@link MessageCallbackDto}
+     * @see <a href=https://dev.vk.com/ru/api/community-events/json-schema#message_new>other event</a>
+     */
     Map<String, Object> object;
 
     @JsonProperty(value = "group_id")
@@ -27,5 +37,8 @@ public class CallbackDto {
     @JsonProperty(value = "event_id")
     String eventId;
 
+    /**
+     * API version
+     */
     String v;
 }

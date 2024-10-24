@@ -6,26 +6,18 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Builder
-@Getter
-@Setter
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Getter @Setter
 @JsonPropertyOrder(alphabetic = true)
 @EqualsAndHashCode(exclude = "randomId")
 public class SendMessageRequestDto {
     @JsonProperty(value = "user_id")
-    Long userId;
+    private Long userId;
 
     @JsonProperty(value = "random_id")
-    Long randomId;
+    private Long randomId;
 
     @JsonProperty(value = "peer_id")
-    Long peerId;
+    private Long peerId;
 
-    @JsonProperty(value = "chat_id")
-    Long chatId;
-
-    @JsonProperty(value = "group_id")
-    Long groupId;
-
-    String message;
+    private String message;
 }
