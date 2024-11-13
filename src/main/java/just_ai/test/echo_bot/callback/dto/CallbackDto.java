@@ -14,7 +14,7 @@ import java.util.Map;
  * @see <a href=https://dev.vk.com/ru/api/callback/getting-started>VK API documentation</a>
  * @author Mikheev Roman
  */
-@Getter
+@Getter @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

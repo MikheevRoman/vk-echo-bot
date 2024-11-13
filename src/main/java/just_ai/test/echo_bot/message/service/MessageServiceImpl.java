@@ -11,6 +11,7 @@ import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
@@ -31,7 +32,7 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     @Retryable(
-            retryFor = SendMessageException.class,
+            retryFor = {SendMessageException.class, HttpStatusCodeException.class},
             maxAttempts = 10,
             backoff = @Backoff(multiplier = 1.5)
     )
