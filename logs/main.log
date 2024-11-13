@@ -1,0 +1,28 @@
+2024-11-13 23:44:13.331 INFO  j.test.echo_bot.EchoBotApplication - Starting EchoBotApplication using Java 21.0.1 with PID 4468 (C:\Projects\Commercial\JustAI\echo-bot\target\classes started by pupa in C:\Projects\Commercial\JustAI\echo-bot)
+2024-11-13 23:44:13.337 INFO  j.test.echo_bot.EchoBotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-13 23:44:16.589 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-13 23:44:16.589 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-13 23:44:16.712 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-13 23:44:18.007 INFO  j.test.echo_bot.EchoBotApplication - Started EchoBotApplication in 5.579 seconds (process running for 7.232)
+2024-11-13 23:44:44.709 INFO  j.t.e.c.CallbackControllerTest - Starting CallbackControllerTest using Java 21.0.1 with PID 10892 (started by pupa in C:\Projects\Commercial\JustAI\echo-bot)
+2024-11-13 23:44:44.713 INFO  j.t.e.c.CallbackControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-11-13 23:44:51.567 INFO  j.t.e.c.CallbackControllerTest - Started CallbackControllerTest in 7.894 seconds (process running for 11.159)
+2024-11-13 23:44:52.910 INFO  j.t.e.c.service.CallbackServiceImpl - new message from [12345], text = Hello!
+2024-11-13 23:44:53.283 INFO  j.t.e.EchoBotApplicationTests - Starting EchoBotApplicationTests using Java 21.0.1 with PID 10892 (started by pupa in C:\Projects\Commercial\JustAI\echo-bot)
+2024-11-13 23:44:53.285 INFO  j.t.e.EchoBotApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-11-13 23:44:55.423 INFO  j.t.e.EchoBotApplicationTests - Started EchoBotApplicationTests in 2.314 seconds (process running for 15.015)
+2024-11-13 23:44:56.155 ERROR j.t.e.m.service.MessageServiceImpl - cannot send message to user [userId=12345], error: Final retry failed
+2024-11-13 23:53:12.591 INFO  j.test.echo_bot.EchoBotApplication - Starting EchoBotApplication using Java 21.0.1 with PID 4896 (C:\Projects\Commercial\JustAI\echo-bot\target\classes started by pupa in C:\Projects\Commercial\JustAI\echo-bot)
+2024-11-13 23:53:12.603 INFO  j.test.echo_bot.EchoBotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-11-13 23:53:16.121 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-13 23:53:16.122 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-13 23:53:16.255 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-13 23:53:17.638 INFO  j.test.echo_bot.EchoBotApplication - Started EchoBotApplication in 6.014 seconds (process running for 7.434)
+2024-11-13 23:53:45.680 INFO  j.t.e.c.CallbackControllerTest - Starting CallbackControllerTest using Java 21.0.1 with PID 9220 (started by pupa in C:\Projects\Commercial\JustAI\echo-bot)
+2024-11-13 23:53:45.685 INFO  j.t.e.c.CallbackControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-11-13 23:53:52.824 INFO  j.t.e.c.CallbackControllerTest - Started CallbackControllerTest in 8.021 seconds (process running for 13.538)
+2024-11-13 23:53:54.606 INFO  j.t.e.c.service.CallbackServiceImpl - new message from [12345], text = Hello!
+2024-11-13 23:53:54.985 INFO  j.t.e.EchoBotApplicationTests - Starting EchoBotApplicationTests using Java 21.0.1 with PID 9220 (started by pupa in C:\Projects\Commercial\JustAI\echo-bot)
+2024-11-13 23:53:54.987 INFO  j.t.e.EchoBotApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-11-13 23:53:57.478 INFO  j.t.e.EchoBotApplicationTests - Started EchoBotApplicationTests in 2.683 seconds (process running for 18.192)
+2024-11-13 23:53:58.338 ERROR j.t.e.m.service.MessageServiceImpl - cannot send message to user [userId=12345], error: Final retry failed

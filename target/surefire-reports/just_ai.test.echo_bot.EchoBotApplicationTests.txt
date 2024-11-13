@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: just_ai.test.echo_bot.EchoBotApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.775 s -- in just_ai.test.echo_bot.EchoBotApplicationTests

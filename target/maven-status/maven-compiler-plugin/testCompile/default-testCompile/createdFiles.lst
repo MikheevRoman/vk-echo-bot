@@ -1,0 +1,5 @@
+just_ai\test\echo_bot\message\MessageServiceImplTest.class
+just_ai\test\echo_bot\callback\CallbackServiceTest.class
+just_ai\test\echo_bot\EchoBotApplicationTests.class
+just_ai\test\echo_bot\callback\CallbackControllerTest.class
+just_ai\test\echo_bot\callback\RequestMapperTest.class
